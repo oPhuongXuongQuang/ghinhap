@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>064A9548-00F8-4D28-A182-46DE22467EB8</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>ghinhap</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>029A1B4121297333275FD202C96EB95D0F2BCD82</key>
 		<string>https://github.com/oPhuongXuongQuang/ghinhap.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>ghinhap.xcodeproj/project.xcworkspace</string>
+	<string>ghinhap.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>029A1B4121297333275FD202C96EB95D0F2BCD82</key>

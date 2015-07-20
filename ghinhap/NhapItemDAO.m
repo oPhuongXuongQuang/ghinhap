@@ -17,7 +17,8 @@
 
 @implementation NhapItemDAO
 
-- (NSManagedObjectContext *)managedObjectContext {
+- (NSManagedObjectContext *)managedObjectContext
+{
     NSManagedObjectContext *context = nil;
     id delegate = [[UIApplication sharedApplication] delegate];
     if ([delegate performSelector:@selector(managedObjectContext)]) {
@@ -26,13 +27,23 @@
     return context;
 }
 
-- (NSMutableArray *)getAllData{
+- (NSMutableArray *)getFirstData
+{
+    NSManagedObjectContext *context = [self managedObjectContext];
+    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Nhap"];
+    [request setFetchLimit:1];
+    return [[context executeFetchRequest:request error:nil] mutableCopy];
+}
+
+- (NSMutableArray *)getAllData
+{
     NSManagedObjectContext *context = [self managedObjectContext];
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Nhap"];
     return [[context executeFetchRequest:request error:nil] mutableCopy];
 }
 
-- (void)addItem: (NhapItem *) item{
+- (void)addItem: (NhapItem *) item
+{
     NSManagedObjectContext *context = [self managedObjectContext];
     
     // Create a new managed object
@@ -56,7 +67,8 @@
     }
 }
 
-- (void)removeItem: (NhapItem *) item{
+- (void)removeItem: (NhapItem *) item
+{
     
 }
 

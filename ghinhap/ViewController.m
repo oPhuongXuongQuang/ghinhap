@@ -19,6 +19,8 @@
     SCNetworkReachabilityRef _netReachRef;
 }
 
+- (NSString *)getHomeNhap;
+
 - (void)addToNhapList:(NSString *)newNhap;
 
 - (void)updateBadge;
@@ -33,6 +35,7 @@
 @synthesize nhapName;
 @synthesize shareButton;
 @synthesize menuButton;
+@synthesize homeNhap;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -50,9 +53,11 @@
     
     CGRect screenBound = [[UIScreen mainScreen] bounds];
     
-    // Do any additional setup after loading the view, typically from a nib.
-    NSString *fullURL = @"http://ghinhap.com/test";
-    NSURL *url = [NSURL URLWithString:fullURL];
+    // Get home nhap from user's first input
+    homeNhap = [self getHomeNhap];
+    
+    NSString *fullURL = @"http://ghinhap.com/";
+    NSURL *url = [NSURL URLWithString:[fullURL stringByAppendingString:homeNhap]];
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
     
     _webView = [[UIWebView alloc] init];
@@ -66,7 +71,7 @@
     [self.view addSubview:toolBar];
     [self.view addSubview:navToolBar];
     
-    [nhapName setText:@"test"];
+    [nhapName setText:homeNhap];
     
 //    [[NSNotificationCenter defaultCenter] addObserver:self
 //                                             selector:@selector(toggleSaveButton)
@@ -124,7 +129,7 @@
     [nhapName setTextAlignment:NSTextAlignmentCenter];
     shareButton.enabled = YES;
     if(nhapName.text.length == 0){
-        [nhapName setText:@"test"];
+        [nhapName setText:homeNhap];
     }
     return NO;
 }
@@ -135,6 +140,15 @@
 
 - (void)keyboardWillHide:(NSNotification*)aNotification{
     
+}
+
+- (NSString *)getHomeNhap
+{
+    NhapItemDAO *dao = [[NhapItemDAO alloc]init];
+    
+    NSMutableArray *data = [dao getFirstData];
+    NhapItem *firstData = [data objectAtIndex:0];
+    return firstData.name;
 }
 
 - (IBAction)addNewNhap:(id)sender {

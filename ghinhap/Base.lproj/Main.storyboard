@@ -1,10 +1,44 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8121.17" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Qx7-8w-JSj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Kqi-ZT-hjo">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--First View Controller-->
+        <scene sceneID="4eF-e0-uuJ">
+            <objects>
+                <viewController id="Kqi-ZT-hjo" customClass="FirstViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZOa-vG-6fb"/>
+                        <viewControllerLayoutGuide type="bottom" id="F1X-er-NdV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CBG-h1-8sn">
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="ghinhap_background" translatesAutoresizingMaskIntoConstraints="NO" id="vYQ-2K-Oav">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="vYQ-2K-Oav" secondAttribute="trailing" id="69w-xi-1ed"/>
+                            <constraint firstItem="vYQ-2K-Oav" firstAttribute="top" secondItem="CBG-h1-8sn" secondAttribute="topMargin" id="9Ex-Gx-ibP"/>
+                            <constraint firstItem="F1X-er-NdV" firstAttribute="top" secondItem="vYQ-2K-Oav" secondAttribute="bottom" id="9sr-Gz-jH4"/>
+                            <constraint firstItem="vYQ-2K-Oav" firstAttribute="leading" secondItem="CBG-h1-8sn" secondAttribute="leadingMargin" id="rlC-47-0av"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="300" height="600"/>
+                    <connections>
+                        <segue destination="Qx7-8w-JSj" kind="custom" identifier="homeView" id="WCf-C6-fYp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BM5-cL-IMj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="128" y="164"/>
+        </scene>
         <!--Reveal View Controller-->
         <scene sceneID="cGc-RQ-MMy">
             <objects>
@@ -49,14 +83,14 @@
                                             <rect key="frame" x="15" y="5" width="32" height="20"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EAl-cj-bpS">
                                             <rect key="frame" x="15" y="25" width="41" height="14"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -112,11 +146,11 @@
                                     <barButtonItem image="someImage" id="fnH-l5-eSs"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="h1k-Wu-L6E"/>
                                     <barButtonItem style="plain" id="5Eg-do-Tra">
-                                        <textField key="customView" opaque="NO" clipsSubviews="YES" contentMode="center" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Edit your Nhap tittle" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" id="jHC-G5-Ubo">
+                                        <textField key="customView" autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" contentMode="center" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Edit your Nhap tittle" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" id="jHC-G5-Ubo">
                                             <rect key="frame" x="182" y="7" width="236" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <accessibility key="accessibilityConfiguration">
-                                                <accessibilityTraits key="traits" header="YES"/>
+                                                <accessibilityTraits key="traits" none="YES"/>
                                             </accessibility>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
@@ -150,6 +184,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ghinhap_background" width="1081" height="1921"/>
         <image name="someImage" width="34" height="44"/>
     </resources>
 </document>

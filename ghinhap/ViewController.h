@@ -12,6 +12,8 @@
     NSString *userName;
 }
 
+@property (nonatomic, strong) NSString *homeNhap;
+
 @property (weak, nonatomic) IBOutlet UIToolbar *toolBar;
 
 @property (weak, nonatomic) IBOutlet UIToolbar *navToolBar;

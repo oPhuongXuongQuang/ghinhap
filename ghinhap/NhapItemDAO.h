@@ -13,10 +13,12 @@
 
 @interface NhapItemDAO : NSObject
 
--(NSMutableArray *)getAllData;
+- (NSMutableArray *)getFirstData;
 
--(void)addItem: (NhapItem *) item;
+- (NSMutableArray *)getAllData;
 
--(void)removeItem: (NhapItem *) item;
+- (void)addItem: (NhapItem *) item;
+
+- (void)removeItem: (NhapItem *) item;
 
 @end

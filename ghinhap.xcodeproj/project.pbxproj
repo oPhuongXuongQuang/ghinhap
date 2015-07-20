@@ -22,6 +22,7 @@
 		BCA2B7111B5BEFDB00B51957 /* UIBarButtonItem+Badge.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA2B7101B5BEFDB00B51957 /* UIBarButtonItem+Badge.m */; };
 		BCC83E561B5C066F00B2E221 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC83E551B5C066F00B2E221 /* SWRevealViewController.m */; };
 		BCC83E5C1B5C0B8D00B2E221 /* SidebarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC83E5A1B5C0B8D00B2E221 /* SidebarViewController.m */; };
+		BCCC03411B5D322E00308D13 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCCC03401B5D322E00308D13 /* FirstViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,8 @@
 		BCC83E551B5C066F00B2E221 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = ghinhap/sidebar/SWRevealViewController.m; sourceTree = "<group>"; };
 		BCC83E591B5C0B8D00B2E221 /* SidebarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SidebarViewController.h; path = ghinhap/sidebar/SidebarViewController.h; sourceTree = "<group>"; };
 		BCC83E5A1B5C0B8D00B2E221 /* SidebarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SidebarViewController.m; path = ghinhap/sidebar/SidebarViewController.m; sourceTree = "<group>"; };
+		BCCC033F1B5D322E00308D13 /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		BCCC03401B5D322E00308D13 /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +108,8 @@
 		77B81AC11B4FD6E4003908E1 /* ghinhap */ = {
 			isa = PBXGroup;
 			children = (
+				BCCC033F1B5D322E00308D13 /* FirstViewController.h */,
+				BCCC03401B5D322E00308D13 /* FirstViewController.m */,
 				BCA2B70F1B5BEFDB00B51957 /* UIBarButtonItem+Badge.h */,
 				BCA2B7101B5BEFDB00B51957 /* UIBarButtonItem+Badge.m */,
 				77B81AC61B4FD6E4003908E1 /* AppDelegate.h */,
@@ -288,6 +293,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCCC03411B5D322E00308D13 /* FirstViewController.m in Sources */,
 				77B81ACB1B4FD6E4003908E1 /* ViewController.m in Sources */,
 				77B81AC81B4FD6E4003908E1 /* AppDelegate.m in Sources */,
 				BC482A0E1B5CC443009C09DE /* NhapItem.m in Sources */,
