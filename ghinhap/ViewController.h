@@ -8,9 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<UITextFieldDelegate>{
+    NSString *userName;
+}
 
-@property (weak, nonatomic) IBOutlet UIWebView *webView;
+@property (weak, nonatomic) IBOutlet UIToolbar *toolBar;
+
+@property (weak, nonatomic) IBOutlet UIToolbar *navToolBar;
+@property (weak, nonatomic) IBOutlet UITextField *nhapName;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *shareButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *menuButton;
+
+- (IBAction)addNewNhap:(id)sender;
 
 @end
 

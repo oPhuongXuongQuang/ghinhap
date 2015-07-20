@@ -14,6 +14,14 @@
 		77B81AD01B4FD6E4003908E1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77B81ACF1B4FD6E4003908E1 /* Images.xcassets */; };
 		77B81AD31B4FD6E4003908E1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77B81AD11B4FD6E4003908E1 /* LaunchScreen.xib */; };
 		77B81ADF1B4FD6E4003908E1 /* ghinhapTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 77B81ADE1B4FD6E4003908E1 /* ghinhapTests.m */; };
+		BC482A041B5CAB23009C09DE /* TableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC482A031B5CAB23009C09DE /* TableCell.xib */; };
+		BC482A071B5CAC8D009C09DE /* TableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC482A061B5CAC8D009C09DE /* TableCell.m */; };
+		BC482A0E1B5CC443009C09DE /* NhapItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BC482A0D1B5CC443009C09DE /* NhapItem.m */; };
+		BC482A141B5CDD44009C09DE /* NhapItemDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = BC482A131B5CDD44009C09DE /* NhapItemDAO.m */; };
+		BC482A591B5CF114009C09DE /* ghinhap.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BC482A571B5CF114009C09DE /* ghinhap.xcdatamodeld */; };
+		BCA2B7111B5BEFDB00B51957 /* UIBarButtonItem+Badge.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA2B7101B5BEFDB00B51957 /* UIBarButtonItem+Badge.m */; };
+		BCC83E561B5C066F00B2E221 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC83E551B5C066F00B2E221 /* SWRevealViewController.m */; };
+		BCC83E5C1B5C0B8D00B2E221 /* SidebarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC83E5A1B5C0B8D00B2E221 /* SidebarViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +48,20 @@
 		77B81AD81B4FD6E4003908E1 /* ghinhapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ghinhapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		77B81ADD1B4FD6E4003908E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		77B81ADE1B4FD6E4003908E1 /* ghinhapTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ghinhapTests.m; sourceTree = "<group>"; };
+		BC482A031B5CAB23009C09DE /* TableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TableCell.xib; path = ghinhap/TableCell.xib; sourceTree = "<group>"; };
+		BC482A051B5CAC8D009C09DE /* TableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TableCell.h; path = ghinhap/sidebar/TableCell.h; sourceTree = "<group>"; };
+		BC482A061B5CAC8D009C09DE /* TableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TableCell.m; path = ghinhap/sidebar/TableCell.m; sourceTree = "<group>"; };
+		BC482A0D1B5CC443009C09DE /* NhapItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NhapItem.m; path = ghinhap/NhapItem.m; sourceTree = "<group>"; };
+		BC482A101B5CC7F1009C09DE /* NhapItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NhapItem.h; path = ghinhap/NhapItem.h; sourceTree = "<group>"; };
+		BC482A121B5CDD44009C09DE /* NhapItemDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NhapItemDAO.h; path = ghinhap/NhapItemDAO.h; sourceTree = "<group>"; };
+		BC482A131B5CDD44009C09DE /* NhapItemDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NhapItemDAO.m; path = ghinhap/NhapItemDAO.m; sourceTree = "<group>"; };
+		BC482A581B5CF114009C09DE /* ghinhap.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ghinhap.xcdatamodel; sourceTree = "<group>"; };
+		BCA2B70F1B5BEFDB00B51957 /* UIBarButtonItem+Badge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Badge.h"; sourceTree = "<group>"; };
+		BCA2B7101B5BEFDB00B51957 /* UIBarButtonItem+Badge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Badge.m"; sourceTree = "<group>"; };
+		BCC83E541B5C066F00B2E221 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = ghinhap/sidebar/SWRevealViewController.h; sourceTree = "<group>"; };
+		BCC83E551B5C066F00B2E221 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = ghinhap/sidebar/SWRevealViewController.m; sourceTree = "<group>"; };
+		BCC83E591B5C0B8D00B2E221 /* SidebarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SidebarViewController.h; path = ghinhap/sidebar/SidebarViewController.h; sourceTree = "<group>"; };
+		BCC83E5A1B5C0B8D00B2E221 /* SidebarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SidebarViewController.m; path = ghinhap/sidebar/SidebarViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,9 +85,11 @@
 		77B81AB61B4FD6E4003908E1 = {
 			isa = PBXGroup;
 			children = (
+				BC482A081B5CBDE6009C09DE /* database */,
 				77B81AC11B4FD6E4003908E1 /* ghinhap */,
-				77B81ADB1B4FD6E4003908E1 /* ghinhapTests */,
+				BCC83E531B5C065D00B2E221 /* sidebar */,
 				77B81AC01B4FD6E4003908E1 /* Products */,
+				77B81ADB1B4FD6E4003908E1 /* ghinhapTests */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,6 +105,8 @@
 		77B81AC11B4FD6E4003908E1 /* ghinhap */ = {
 			isa = PBXGroup;
 			children = (
+				BCA2B70F1B5BEFDB00B51957 /* UIBarButtonItem+Badge.h */,
+				BCA2B7101B5BEFDB00B51957 /* UIBarButtonItem+Badge.m */,
 				77B81AC61B4FD6E4003908E1 /* AppDelegate.h */,
 				77B81AC71B4FD6E4003908E1 /* AppDelegate.m */,
 				77B81AC91B4FD6E4003908E1 /* ViewController.h */,
@@ -117,6 +143,48 @@
 				77B81ADD1B4FD6E4003908E1 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BC482A081B5CBDE6009C09DE /* database */ = {
+			isa = PBXGroup;
+			children = (
+				BC482A571B5CF114009C09DE /* ghinhap.xcdatamodeld */,
+				BC482A0C1B5CC3DC009C09DE /* DTO */,
+				BC482A111B5CDCF5009C09DE /* DAO */,
+			);
+			name = database;
+			sourceTree = "<group>";
+		};
+		BC482A0C1B5CC3DC009C09DE /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				BC482A101B5CC7F1009C09DE /* NhapItem.h */,
+				BC482A0D1B5CC443009C09DE /* NhapItem.m */,
+			);
+			name = DTO;
+			sourceTree = "<group>";
+		};
+		BC482A111B5CDCF5009C09DE /* DAO */ = {
+			isa = PBXGroup;
+			children = (
+				BC482A121B5CDD44009C09DE /* NhapItemDAO.h */,
+				BC482A131B5CDD44009C09DE /* NhapItemDAO.m */,
+			);
+			name = DAO;
+			sourceTree = "<group>";
+		};
+		BCC83E531B5C065D00B2E221 /* sidebar */ = {
+			isa = PBXGroup;
+			children = (
+				BCC83E541B5C066F00B2E221 /* SWRevealViewController.h */,
+				BCC83E551B5C066F00B2E221 /* SWRevealViewController.m */,
+				BCC83E591B5C0B8D00B2E221 /* SidebarViewController.h */,
+				BCC83E5A1B5C0B8D00B2E221 /* SidebarViewController.m */,
+				BC482A031B5CAB23009C09DE /* TableCell.xib */,
+				BC482A051B5CAC8D009C09DE /* TableCell.h */,
+				BC482A061B5CAC8D009C09DE /* TableCell.m */,
+			);
+			name = sidebar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,7 +231,7 @@
 		77B81AB71B4FD6E4003908E1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = fsoft;
 				TargetAttributes = {
 					77B81ABE1B4FD6E4003908E1 = {
@@ -201,6 +269,7 @@
 			files = (
 				77B81ACE1B4FD6E4003908E1 /* Main.storyboard in Resources */,
 				77B81AD31B4FD6E4003908E1 /* LaunchScreen.xib in Resources */,
+				BC482A041B5CAB23009C09DE /* TableCell.xib in Resources */,
 				77B81AD01B4FD6E4003908E1 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -221,7 +290,14 @@
 			files = (
 				77B81ACB1B4FD6E4003908E1 /* ViewController.m in Sources */,
 				77B81AC81B4FD6E4003908E1 /* AppDelegate.m in Sources */,
+				BC482A0E1B5CC443009C09DE /* NhapItem.m in Sources */,
+				BCC83E561B5C066F00B2E221 /* SWRevealViewController.m in Sources */,
+				BCC83E5C1B5C0B8D00B2E221 /* SidebarViewController.m in Sources */,
+				BC482A071B5CAC8D009C09DE /* TableCell.m in Sources */,
+				BCA2B7111B5BEFDB00B51957 /* UIBarButtonItem+Badge.m in Sources */,
+				BC482A141B5CDD44009C09DE /* NhapItemDAO.m in Sources */,
 				77B81AC51B4FD6E4003908E1 /* main.m in Sources */,
+				BC482A591B5CF114009C09DE /* ghinhap.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +359,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -347,6 +424,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ghinhap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "fsoft.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -357,6 +435,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ghinhap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "fsoft.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -375,6 +454,7 @@
 				);
 				INFOPLIST_FILE = ghinhapTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "fsoft.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ghinhap.app/ghinhap";
 			};
@@ -390,6 +470,7 @@
 				);
 				INFOPLIST_FILE = ghinhapTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "fsoft.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ghinhap.app/ghinhap";
 			};
@@ -414,6 +495,7 @@
 				77B81AE41B4FD6E4003908E1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		77B81AE51B4FD6E4003908E1 /* Build configuration list for PBXNativeTarget "ghinhapTests" */ = {
 			isa = XCConfigurationList;
@@ -422,8 +504,23 @@
 				77B81AE71B4FD6E4003908E1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		BC482A571B5CF114009C09DE /* ghinhap.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BC482A581B5CF114009C09DE /* ghinhap.xcdatamodel */,
+			);
+			currentVersion = BC482A581B5CF114009C09DE /* ghinhap.xcdatamodel */;
+			name = ghinhap.xcdatamodeld;
+			path = ghinhap/ghinhap.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 77B81AB71B4FD6E4003908E1 /* Project object */;
 }
