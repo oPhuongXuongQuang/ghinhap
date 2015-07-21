@@ -72,4 +72,17 @@
     
 }
 
+- (BOOL)isNhapExist: (NSString *) nhapToCheck
+{
+    NSManagedObjectContext *context = [self managedObjectContext];
+    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Nhap"];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name == %@",nhapToCheck];
+    [request setPredicate:predicate];
+    NSMutableArray *result = [[context executeFetchRequest:request error:nil] mutableCopy];
+    if(result.count != 0){
+        return YES;
+    }
+    return NO;
+}
+
 @end

@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "FirstViewController.h"
+#import "SWRevealViewController.h"
+#import "NhapItemDAO.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +20,24 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    if(![[NSUserDefaults standardUserDefaults]boolForKey:@"IsFirstUsed"]){
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"IsFirstUsed"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    
+        NhapItemDAO *dao = [[NhapItemDAO alloc]init];
+        NSMutableArray *data = [dao getFirstData];
+        if(data.count == 0){
+            FirstViewController *firstViewController = (FirstViewController *)[storyboard instantiateViewControllerWithIdentifier:@"firstUsingView"];
+            self.window.rootViewController = firstViewController;
+        } else {
+            SWRevealViewController *viewController = (SWRevealViewController *)[storyboard instantiateViewControllerWithIdentifier:@"revealView"];
+            self.window.rootViewController = viewController;
+        }
+    } else{
+        SWRevealViewController *viewController = (SWRevealViewController *)[storyboard instantiateViewControllerWithIdentifier:@"revealView"];
+        self.window.rootViewController = viewController;
+    }
     return YES;
 }
 

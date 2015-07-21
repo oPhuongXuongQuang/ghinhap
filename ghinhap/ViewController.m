@@ -21,6 +21,8 @@
 
 - (NSString *)getHomeNhap;
 
+- (BOOL)isNhapExist:(NSString *)nhapToCheck;
+
 - (void)addToNhapList:(NSString *)newNhap;
 
 - (void)updateBadge;
@@ -36,6 +38,7 @@
 @synthesize shareButton;
 @synthesize menuButton;
 @synthesize homeNhap;
+@synthesize currentNhap;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -50,18 +53,26 @@
         [menuButton setAction: @selector( revealToggle: )];
         [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     }
-    
-    CGRect screenBound = [[UIScreen mainScreen] bounds];
+
+    NSString *fullURL = @"http://ghinhap.com/";
+    NSURL *url = nil;
     
     // Get home nhap from user's first input
     homeNhap = [self getHomeNhap];
     
-    NSString *fullURL = @"http://ghinhap.com/";
-    NSURL *url = [NSURL URLWithString:[fullURL stringByAppendingString:homeNhap]];
+    url = [NSURL URLWithString:[fullURL stringByAppendingString:homeNhap]];
+    if (currentNhap.length != 0) {
+        // Get current Nhap
+        url = [NSURL URLWithString:[fullURL stringByAppendingString:currentNhap]];
+        [nhapName setText:currentNhap];
+    } else {
+        [nhapName setText:homeNhap];
+    }
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
     
     _webView = [[UIWebView alloc] init];
     [_webView loadRequest:requestObj];
+    CGRect screenBound = [[UIScreen mainScreen] bounds];
     _webView.frame = CGRectMake(screenBound.origin.x, screenBound.origin.y + 60, screenBound.size.width, screenBound.size.height);
     
     [_webView setUserInteractionEnabled: YES];
@@ -70,8 +81,6 @@
     
     [self.view addSubview:toolBar];
     [self.view addSubview:navToolBar];
-    
-    [nhapName setText:homeNhap];
     
 //    [[NSNotificationCenter defaultCenter] addObserver:self
 //                                             selector:@selector(toggleSaveButton)
@@ -170,11 +179,14 @@
         if (buttonIndex == alertView.cancelButtonIndex)
         {
             NSString *newNhap = [[alertView textFieldAtIndex:0]text];
-            [self reloadWebviewWithNewNhap:newNhap];
             nhapName.text = newNhap;
-            [self addToNhapList:newNhap];
-            [self updateBadge];
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"RefreshSidebarView" object:nil userInfo:nil];
+            [self reloadWebviewWithNewNhap:newNhap];
+            if(![self isNhapExist:newNhap])
+            {
+                [self addToNhapList:newNhap];
+                [self updateBadge];
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"RefreshSidebarView" object:nil userInfo:nil];
+            }
         }
         else {
             
@@ -187,7 +199,7 @@
 
 - (void)reloadWebviewWithNewNhap:(NSString*)newNhap{
     NSString *fullURL = @"http://ghinhap.com/";
-    [fullURL stringByAppendingString:newNhap];
+    fullURL = [fullURL stringByAppendingString:newNhap];
     NSURL *url = [NSURL URLWithString:fullURL];
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
     
@@ -200,6 +212,11 @@
     [textField resignFirstResponder];
     
     return YES;
+}
+
+- (BOOL)isNhapExist:(NSString *)nhapToCheck{
+    NhapItemDAO *dao = [[NhapItemDAO alloc]init];
+    return [dao isNhapExist:nhapToCheck];
 }
 
 - (void)addToNhapList:(NSString *)newNhap{

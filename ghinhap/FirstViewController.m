@@ -64,7 +64,7 @@
     [dao addItem:item];
 }
 
-- (void)prepareForSegue:(nonnull UIStoryboardSegue *)segue sender:(nullable id)sender
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     [self.view endEditing:YES];
     if([segue.identifier isEqualToString:@"homeView"]){

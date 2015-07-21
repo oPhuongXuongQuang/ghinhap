@@ -21,4 +21,6 @@
 
 - (void)removeItem: (NhapItem *) item;
 
+- (BOOL)isNhapExist: (NSString *) nhapToCheck;
+
 @end

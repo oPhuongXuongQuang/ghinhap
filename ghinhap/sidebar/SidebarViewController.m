@@ -8,6 +8,7 @@
 
 #import "SidebarViewController.h"
 #import "SWRevealViewController.h"
+#import "ViewController.h"
 #import "TableCell.h"
 #import "NhapItem.h"
 #import "NhapItemDAO.h"
@@ -127,21 +128,15 @@
 }
 */
 
-/*
+
 #pragma mark - Table view delegate
 
 // In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Navigation logic may go here, for example:
-    // Create the next view controller.
-    <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:<#@"Nib name"#> bundle:nil];
-    
-    // Pass the selected object to the new view controller.
-    
-    // Push the view controller.
-    [self.navigationController pushViewController:detailViewController animated:YES];
+    NhapItem *nhapItem = [self.nhapList objectAtIndex:indexPath.row];
+    [self performSegueWithIdentifier:@"reloadWebview" sender:nhapItem.name];
 }
-*/
+
 
 /*
 #pragma mark - Navigation
@@ -162,6 +157,13 @@
 {
     [self getAllData];
     [self.tableView reloadData];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:@"reloadWebview"]){
+        ViewController *viewController = segue.destinationViewController;
+        viewController.currentNhap = sender;
+    }
 }
 
 @end

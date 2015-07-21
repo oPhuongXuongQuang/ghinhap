@@ -8,7 +8,7 @@
         <!--First View Controller-->
         <scene sceneID="4eF-e0-uuJ">
             <objects>
-                <viewController id="Kqi-ZT-hjo" customClass="FirstViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="firstUsingView" id="Kqi-ZT-hjo" customClass="FirstViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ZOa-vG-6fb"/>
                         <viewControllerLayoutGuide type="bottom" id="F1X-er-NdV"/>
@@ -42,7 +42,7 @@
         <!--Reveal View Controller-->
         <scene sceneID="cGc-RQ-MMy">
             <objects>
-                <viewController id="Qx7-8w-JSj" customClass="SWRevealViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="revealView" id="Qx7-8w-JSj" customClass="SWRevealViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xWV-3J-8xB"/>
                         <viewControllerLayoutGuide type="bottom" id="V5c-nI-qTN"/>
@@ -104,6 +104,9 @@
                     </tableView>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="300" height="600"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="custom" identifier="reloadWebview" customClass="SWRevealViewControllerSeguePushController" id="Jdq-On-f7k"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H43-ZD-wVn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -112,7 +115,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mainView" id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -180,11 +183,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1340" y="960"/>
+            <point key="canvasLocation" x="1008" y="964"/>
         </scene>
     </scenes>
     <resources>
         <image name="ghinhap_background" width="1081" height="1921"/>
         <image name="someImage" width="34" height="44"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Jdq-On-f7k"/>
+    </inferredMetricsTieBreakers>
 </document>
