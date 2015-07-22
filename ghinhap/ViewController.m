@@ -68,17 +68,42 @@
     [nhapName setTag:0];
     [nhapName setDelegate:self];
     url = [NSURL URLWithString:[fullURL stringByAppendingString:homeNhap]];
+    NSString *cacheFile = [homeNhap stringByAppendingString:@".htm"];
     if (currentNhap.length != 0) {
         // Get current Nhap
         url = [NSURL URLWithString:[fullURL stringByAppendingString:currentNhap]];
+        cacheFile = [currentNhap stringByAppendingString:@".htm"];
         [nhapName setText:currentNhap];
     } else {
         [nhapName setText:homeNhap];
     }
-    NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
-    
     _webView = [[UIWebView alloc] init];
-    [_webView loadRequest:requestObj];
+    
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *filePath = [NSString stringWithFormat:@"%@/%@", [paths objectAtIndex:0],cacheFile];
+    NSURLRequest *requestObj;
+    
+    if([[NSFileManager defaultManager] fileExistsAtPath:filePath]){
+        requestObj = [NSURLRequest requestWithURL:[NSURL fileURLWithPath:filePath]];
+        NSData *responseData = [NSURLConnection sendSynchronousRequest: requestObj
+                                             returningResponse:nil
+                                                         error: nil];
+        NSString *htmlBody = [[NSString alloc] initWithData:responseData
+                                                   encoding:NSUTF8StringEncoding];
+        [_webView loadHTMLString:htmlBody baseURL:url];
+//        [_webView loadData:responseData MIMEType:@"text/html" textEncodingName:@"UTF-8" baseURL:url];
+    } else {
+        NSData *urlData = [NSData dataWithContentsOfURL:url];
+        
+        [urlData writeToFile:filePath atomically:YES];
+        requestObj = [NSURLRequest requestWithURL:url];
+        
+        [_webView loadRequest:requestObj];
+        
+    }
+    
+    
     CGRect screenBound = [[UIScreen mainScreen] bounds];
     _webView.frame = CGRectMake(screenBound.origin.x, screenBound.origin.y + 60, screenBound.size.width, screenBound.size.height);
     
@@ -221,6 +246,7 @@
     NSString *fullURL = @"http://ghinhap.com/";
     fullURL = [fullURL stringByAppendingString:newNhap];
     NSURL *url = [NSURL URLWithString:fullURL];
+    
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
     
     [_webView loadRequest:requestObj];

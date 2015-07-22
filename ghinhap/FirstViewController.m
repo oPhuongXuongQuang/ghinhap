@@ -13,6 +13,7 @@
 
 @interface FirstViewController (){
     UITextField *nhapHomeName;
+    UIButton *createButton;
 }
 
 - (void)addToNhapList:(NSString *)homeNhap;
@@ -39,6 +40,13 @@
     [self.view addSubview:nhapHomeName];
     
     nhapHomeName.delegate = self;
+    
+//    CGRect buttonFrame = nhapHomeName.frame;
+//    createButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+//    createButton.frame = CGRectMake(buttonFrame.origin.x, buttonFrame.origin.y + 30, buttonFrame.size.width, buttonFrame.size.height);
+//    [createButton setTitle:@"Đi tới nháp!" forState:UIControlStateNormal];
+//    [createButton setTintColor:[UIColor blackColor]];
+//    [self.view addSubview:createButton];
 }
 
 - (void)didReceiveMemoryWarning {
