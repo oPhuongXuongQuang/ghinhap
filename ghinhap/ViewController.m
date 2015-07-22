@@ -179,13 +179,16 @@
         if (buttonIndex == alertView.cancelButtonIndex)
         {
             NSString *newNhap = [[alertView textFieldAtIndex:0]text];
-            nhapName.text = newNhap;
-            [self reloadWebviewWithNewNhap:newNhap];
-            if(![self isNhapExist:newNhap])
+            if([newNhap stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]].length != 0)
             {
-                [self addToNhapList:newNhap];
-                [self updateBadge];
-                [[NSNotificationCenter defaultCenter] postNotificationName:@"RefreshSidebarView" object:nil userInfo:nil];
+                nhapName.text = newNhap;
+                [self reloadWebviewWithNewNhap:newNhap];
+                if(![self isNhapExist:newNhap])
+                {
+                    [self addToNhapList:newNhap];
+                    [self updateBadge];
+                    [[NSNotificationCenter defaultCenter] postNotificationName:@"RefreshSidebarView" object:nil userInfo:nil];
+                }
             }
         }
         else {
