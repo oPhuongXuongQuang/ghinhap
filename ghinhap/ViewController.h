@@ -19,7 +19,7 @@
 
 @property (weak, nonatomic) IBOutlet UIToolbar *navToolBar;
 @property (weak, nonatomic) IBOutlet UITextField *nhapName;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *shareButton;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *shareButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *menuButton;
 
 - (IBAction)addNewNhap:(id)sender;

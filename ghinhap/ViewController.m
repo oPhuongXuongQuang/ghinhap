@@ -16,21 +16,24 @@
 
 @interface ViewController(){
     UIWebView* _webView;
-    SCNetworkReachabilityRef _netReachRef;
+    UIBarButtonItem *cancelButton;
 }
 
 - (NSString *)getHomeNhap;
 
 - (BOOL)isNhapExist:(NSString *)nhapToCheck;
 
+- (void)addNewAndReload:(NSString *)newNhap;
+
 - (void)addToNhapList:(NSString *)newNhap;
+
+- (void)cancelAction;
 
 - (void)updateBadge;
 
 @end
 
 @implementation ViewController
-
 
 @synthesize toolBar;
 @synthesize navToolBar;
@@ -44,6 +47,9 @@
     [super viewDidLoad];
     
     userName = @"User";
+    cancelButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelAction)];
+//    [cancelButton setTintColor:[UIColor clearColor]];
+//    cancelButton.accessibilityFrame = CGRectMake(0, 0, 0, 0);
     
     //Add sidebar effect
     SWRevealViewController *revealViewController = self.revealViewController;
@@ -59,7 +65,8 @@
     
     // Get home nhap from user's first input
     homeNhap = [self getHomeNhap];
-    
+    [nhapName setTag:0];
+    [nhapName setDelegate:self];
     url = [NSURL URLWithString:[fullURL stringByAppendingString:homeNhap]];
     if (currentNhap.length != 0) {
         // Get current Nhap
@@ -130,8 +137,13 @@
 
 - (BOOL)nhapNameActive{
     [nhapName setTextAlignment:NSTextAlignmentLeft];
-    shareButton.enabled = NO;
+    [shareButton setStyle:UIBarButtonItemStylePlain];
+    [shareButton setTitle:@"Cancel"];
     return YES;
+}
+
+- (void)cancelAction{
+    [nhapName resignFirstResponder];
 }
 
 - (BOOL)nhapNameEndActive{
@@ -171,6 +183,7 @@
     [alert show];
     [[alert textFieldAtIndex:0] setReturnKeyType:UIReturnKeyDone];
     [[alert textFieldAtIndex:0] setDelegate:self];
+    [[alert textFieldAtIndex:0] setTag:1];
 }
 
 - (void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
@@ -179,17 +192,7 @@
         if (buttonIndex == alertView.cancelButtonIndex)
         {
             NSString *newNhap = [[alertView textFieldAtIndex:0]text];
-            if([newNhap stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]].length != 0)
-            {
-                nhapName.text = newNhap;
-                [self reloadWebviewWithNewNhap:newNhap];
-                if(![self isNhapExist:newNhap])
-                {
-                    [self addToNhapList:newNhap];
-                    [self updateBadge];
-                    [[NSNotificationCenter defaultCenter] postNotificationName:@"RefreshSidebarView" object:nil userInfo:nil];
-                }
-            }
+            [self addNewAndReload:newNhap];
         }
         else {
             
@@ -200,6 +203,20 @@
     }
 }
 
+- (void)addNewAndReload:(NSString *)newNhap{
+    if([newNhap stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]].length != 0)
+    {
+        nhapName.text = newNhap;
+        [self reloadWebviewWithNewNhap:newNhap];
+        if(![self isNhapExist:newNhap])
+        {
+            [self addToNhapList:newNhap];
+            [self updateBadge];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"RefreshSidebarView" object:nil userInfo:nil];
+        }
+    }
+}
+
 - (void)reloadWebviewWithNewNhap:(NSString*)newNhap{
     NSString *fullURL = @"http://ghinhap.com/";
     fullURL = [fullURL stringByAppendingString:newNhap];
@@ -207,13 +224,18 @@
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
     
     [_webView loadRequest:requestObj];
-//    [_webView reload];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    [textField resignFirstResponder];
-    
+    if(textField.tag == 1)
+    {
+        [textField resignFirstResponder];
+    }
+    else if(textField.tag == 0){
+        [textField resignFirstResponder];
+        [self addNewAndReload:textField.text];
+    }
     return YES;
 }
 
